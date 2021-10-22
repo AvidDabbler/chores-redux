@@ -20,8 +20,8 @@ export const Task = ({ taskId }) => {
           id={`task-${taskId}`}
           checked={task.complete}
           onChange={(event) =>
-            dispatch(
-              taskSlice.actions.toggle({ taskId, completed: !task.completed })
+            dispatch(taskSlice.actions.toggle({ taskId, completed: !task.completed })
+            // ! dispatch(toggle(({type: "tasks/toggle", action: { taskId, completed: !task.completed }}))
             )
           }
         />

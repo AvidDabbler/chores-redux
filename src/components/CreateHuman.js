@@ -15,6 +15,7 @@ export const CreateHuman = () => {
         onSubmit={(event) => {
           event.preventDefault();
           dispatch(humanSlice.actions.add(name));
+          // ! dispatch(toggle(({type: "human/add", action: { name }}))
           setName('');
         }}
       >

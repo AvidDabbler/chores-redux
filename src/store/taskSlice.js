@@ -17,17 +17,18 @@ export const taskSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action) => {
+      // ! {state: this.state || initialState, action:{ type: "tasks/add", ...action}}
       state.push(createTask(action.payload));
     },
     toggle: (state, action) => {
+      // ! {state: this.state || initialState, action:{ type: "tasks/toggle", ...action}}
       const task = state.find((task) => task.id === action.payload.taskId);
-      console.log(task)
       task.completed = action.payload.completed;
     },
     assignToUser: (state, action) => {
-      console.log('action: ', action)
+      // ! {state: this.state || initialState, action:{ type: "tasks/assignToUser", ...action}}
+      console.log('action: ', action);
       const task = state.find((task) => task.id === action.payload.taskId);
-      console.log(task)
       task.assignedTo = action.payload.humanId;
     }
   }

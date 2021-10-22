@@ -15,6 +15,7 @@ export const CreateTask = () => {
         onSubmit={(event) => {
           event.preventDefault();
           dispatch(taskSlice.actions.add(title));
+          // ! dispatch(toggle(({type: "tasks/add", action: { title }}))
           setTitle('');
         }}
       >

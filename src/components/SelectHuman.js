@@ -13,13 +13,13 @@ export const SelectHuman = ({ task }) => {
         className="SelectHuman"
         value={task.assignedTo}
         onChange={(event) => {
-          console.log(task)
           dispatch(
             taskSlice.actions.assignToUser({
               taskId: task.id,
               humanId: event.target.value
             })
           );
+          // ! dispatch(toggle(({type: "tasks/assignToUser", action: { taskId: task.id, humanId: event.target.value }}))
         }}
       >
         <Option>(Unassigned)</Option>
